@@ -120,6 +120,9 @@ public class Abilities : MonoBehaviour {
 					rb.velocity = rb.velocity + grappleRetractSpeed * directionToGrapple;
 					num7 = Vector3.Dot(rb.velocity, directionToGrapple);
 				}
+        if (num7 == 0f) {
+          rb.velocity = Vector3.up * 0.1f;
+        }
 				ropeLength -= grappleRetractSpeed * Time.deltaTime;
 			} else {
 				if (retracting == -1) {
