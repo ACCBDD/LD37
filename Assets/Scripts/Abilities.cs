@@ -16,7 +16,7 @@ public class Abilities : MonoBehaviour {
   private Vector3 aimPoint;
   private List<Vector3> lineRendererPoints = new List<Vector3>(2);
   private int layerMask;
-	private float grapplePayoutSpeed = 3;
+	private float grapplePayoutSpeed = 5;
 	private float grappleRetractSpeed = 6;
 	private float ropeLength;
 	private float num7;
