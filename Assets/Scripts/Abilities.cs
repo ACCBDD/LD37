@@ -6,8 +6,6 @@ public class Abilities : MonoBehaviour {
   private LineRenderer lr;
 	private Rigidbody rb;
 
-  public GameObject child;
-
 	private bool targetFound = false;
 	private bool grappleDeployed = false;
 	private Vector3 grappleGravity;
@@ -17,9 +15,9 @@ public class Abilities : MonoBehaviour {
   private Vector3 lastPoint;
   private Vector3 aimPoint;
   private List<Vector3> lineRendererPoints = new List<Vector3>(2);
-  public int layerMask;
-	private float grapplePayoutSpeed = 2;
-	private float grappleRetractSpeed = 4;
+  private int layerMask;
+	private float grapplePayoutSpeed = 3;
+	private float grappleRetractSpeed = 6;
 	private float ropeLength;
 	private float num7;
 	private float distanceToGrapple;
@@ -55,7 +53,7 @@ public class Abilities : MonoBehaviour {
 	RaycastHit RaycastToMouse() {
 		Vector3 direction = MousePointInWorld() - transform.position;
 		RaycastHit hitInfo;
-		Physics.Raycast(transform.position, direction, out hitInfo, Mathf.Infinity, layerMask);
+		Physics.Raycast(transform.position, direction, out hitInfo, Mathf.Infinity);
 		return hitInfo;
 	}
 
