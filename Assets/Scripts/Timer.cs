@@ -7,7 +7,6 @@ public class Timer : MonoBehaviour {
 	private string centiSecond;
 	private string seconds;
 	private string minutes;
-	private string timeOfDeath;
 	public Text textBox;
 	public Text deathBox;
 
@@ -26,7 +25,6 @@ public class Timer : MonoBehaviour {
 			textBox.text = minutes + ":" + seconds + "." + centiSecond;
 
 		} else {
-			timeOfDeath = textBox.text;
 			deathBox.text = "TERMINATED IN\n" + textBox.text;
 		}
 

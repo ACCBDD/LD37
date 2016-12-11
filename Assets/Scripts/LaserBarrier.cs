@@ -10,8 +10,8 @@ public class LaserBarrier : MonoBehaviour {
     if (collision.gameObject.tag == "Player") {
       Vector3 debrisPosition = collision.transform.position;
 			Quaternion debrisRotation = collision.transform.rotation;
-			Instantiate(playerDebris, debrisPosition, debrisRotation);
 			Object.Destroy(collision.gameObject);
+			Instantiate(playerDebris, debrisPosition, debrisRotation);
     }
 	}
 }

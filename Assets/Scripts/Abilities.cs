@@ -5,6 +5,7 @@ public class Abilities : MonoBehaviour {
 
   private LineRenderer lr;
 	private Rigidbody rb;
+  private AudioSource aud;
 
 	private bool targetFound = false;
 	private bool grappleDeployed = false;
@@ -28,6 +29,7 @@ public class Abilities : MonoBehaviour {
     layerMask = 127;
 		lr = GetComponent<LineRenderer>();
 		rb = GetComponent<Rigidbody>();
+    aud = GetComponent<AudioSource>();
 
     lineRendererPoints.Add(transform.position);
     lr.SetVertexCount(1);
@@ -83,6 +85,7 @@ public class Abilities : MonoBehaviour {
 				targetFound = false;
 				grappleDeployed = true;
 				ropeLength = Vector3.Distance(transform.position, contactPoint);
+        aud.Play();
 			} else {
 				grappleDeployed = false;
 				lr.SetVertexCount(1);

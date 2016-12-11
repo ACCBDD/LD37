@@ -33,6 +33,9 @@ public class PlayerMove : MonoBehaviour {
 	}
 
 	void Update () {
+		if (Input.GetKeyDown("r")) {
+			Application.LoadLevel(Application.loadedLevel);
+		}
 		//add force to move player
 		if (Mathf.Abs(rb.velocity.x) < maxSpeed && canWalk) {
 			rb.AddForce(new Vector3(Input.GetAxis("Horizontal") * speed, 0, 0), ForceMode.Force);
