@@ -23,16 +23,16 @@ public class SpawnHazard : MonoBehaviour {
 					Instantiate(hazards[0], new Vector3(Random.Range(minX + 5, maxX - 5), Random.Range(minY + 5, maxY - 5), 0), Quaternion.identity);
 					break;
 				case 1: //floor laser
-					Instantiate(hazards[1], new Vector3(Random.Range(minX + 7f, maxX - 7f), 1.25f, 0), Quaternion.identity);
+					Instantiate(hazards[1], new Vector3(Random.Range(minX + 10f, maxX - 10f), 1.25f, 0), Quaternion.identity);
 					break;
 				case 2: //ceiling laser
-					Instantiate(hazards[2], new Vector3(Random.Range(minX + 7f, maxX - 7f), 38.75f, 0), Quaternion.Euler(0, 0, 180));
+					Instantiate(hazards[2], new Vector3(Random.Range(minX + 10f, maxX - 10f), 38.75f, 0), Quaternion.Euler(0, 0, 180));
 					break;
 				case 3: //left laser
-					Instantiate(hazards[3], new Vector3(-39f, Random.Range(minY + 7f, maxY - 7f), 0), Quaternion.Euler(0, 0, -90));
+					Instantiate(hazards[3], new Vector3(-39f, Random.Range(minY + 10f, maxY - 10f), 0), Quaternion.Euler(0, 0, -90));
 					break;
 				case 4: //right laser
-					Instantiate(hazards[4], new Vector3(39f, Random.Range(minY + 7f, maxY - 7f),  0), Quaternion.Euler(0, 0, 90));
+					Instantiate(hazards[4], new Vector3(39f, Random.Range(minY + 10f, maxY - 10f),  0), Quaternion.Euler(0, 0, 90));
 					break;
 			}
 			spawnTimer = Random.Range(7f, 14f);
