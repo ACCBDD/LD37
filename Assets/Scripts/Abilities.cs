@@ -153,7 +153,7 @@ public class Abilities : MonoBehaviour {
       }
 
       //begin raycasting to contactPoint
-      if (Physics.Raycast(transform.position, (contactPoint - transform.position), out blockedBy, ((contactPoint - transform.position).normalized * ((contactPoint - transform.position).magnitude - 0.1f)).magnitude, layerMask)) {
+      if (Physics.Raycast(transform.position, (contactPoint - transform.position), out blockedBy, ((contactPoint - transform.position).normalized * ((contactPoint - transform.position).magnitude - 0.1f)).magnitude)) {
         //there is something in front of the last contact point
         //add a new point to the LineRenderer
         lastPoint = contactPoint;
