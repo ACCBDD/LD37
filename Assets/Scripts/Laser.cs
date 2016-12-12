@@ -8,13 +8,18 @@ public class Laser : MonoBehaviour {
 	public GameObject playerDebris;
 	private AudioSource aud;
 	public AudioClip cl;
+  private ParticleSystem part;
 
 	void Start () {
 		GetComponent<Renderer>().material.color = Color.HSVToRGB(0f, 1.0f, 1.0f);
 		rb = GetComponent<Rigidbody>();
 		aud = GetComponent<AudioSource>();
+    part = GetComponent<ParticleSystem>();
+    part.randomSeed = (uint)Random.Range(0,10000);
+    part.Simulate(0, true, true);
+    part.Emit(20);
 		rb.useGravity = false;
-		rb.AddForce(transform.forward*0.2f);
+		rb.AddForce(transform.forward*0.1f);
 	}
 
 	void OnCollisionEnter(Collision collision) {
@@ -26,8 +31,9 @@ public class Laser : MonoBehaviour {
     } else {
 			aud.clip = cl;
 			aud.Play();
+      part.Emit(20);
 			transform.position = Vector3.one * 9999999f;
 		}
-		Object.Destroy(gameObject, cl.length);
+		Object.Destroy(gameObject, 0.5f);
 	}
 }
